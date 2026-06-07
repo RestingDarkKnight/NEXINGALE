@@ -1,0 +1,18 @@
+[project]
+name = "quantflow"
+version = "0.1.0"
+description = "Two-branch quantitative research and trading pipeline (shared spine + equities/derivatives branches)"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+# stage-specific deps added as branches are built:
+# tda = ["giotto-tda", "gudhi"]
+# volta = ["dimod", "dwave-neal"]
+# memory = ["neo4j", "psycopg2-binary"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
