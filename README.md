@@ -65,18 +65,3 @@ consumes correlations.
 
 Run the tests: `python -m pytest tests/spine/test_rmt.py -q`
 
-## Status
-
-| Component | State |
-|---|---|
-| Repo skeleton (two-branch) | done |
-| Spine · Stage 2 RMT | **done, locked** |
-| Spine · Stage 3 TDA | not started |
-| Spine · Stage 1 pattern memory | not started (off critical path) |
-| D · candidate generation | **next** |
-| D · VOLTA QUBO | not started |
-| D · lean agent layer | not started |
-| D · backtest + dry-run | not started |
-
-See `docs/MATH_LEDGER.md` for where each built component trades mathematical
-optimality for robustness, and what the rigorous upgrade would be.
