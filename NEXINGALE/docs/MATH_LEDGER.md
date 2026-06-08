@@ -1,6 +1,6 @@
 # Mathematical Improvements Ledger
 
-A running, honest record of where quantflow trades mathematical optimality for
+A running, honest record of where Nexingale trades mathematical optimality for
 robustness, simplicity, or build speed. Each entry states what we shipped, why,
 what the more rigorous choice would be, and what it would cost. Nothing here is a
 bug — these are deliberate, documented trade-offs. Revisit when a component
