@@ -149,26 +149,26 @@ the next feature).
 ## Project structure
 
 ```
-quantflow/
-├── quantflow/
+Nexingale/
+├── Nexingale/
 │   ├── spine/                    # shared across both branches
 │   │   ├── rmt/filter.py         # Stage 2: Ledoit-Wolf cleaning
 │   │   ├── tda/detect.py         # Stage 3: persistent-homology regime
 │   │   ├── memory/               # Stage 1 pattern memory (planned)
 │   │   └── data/adapters/        # data ingestion (planned)
 │   ├── branches/
-│   │   ├── derivatives/          # quantflow-D (built)
+│   │   ├── derivatives/          # Nexingale-D (built)
 │   │   │   ├── candidates/       # Stage 1: signal engines + schema
 │   │   │   ├── volta/            # Stage 4: QUBO optimizer
 │   │   │   ├── agents/           # Stage 5: risk agent
 │   │   │   └── pipeline.py       # orchestrator
-│   │   └── equities/             # quantflow-E (planned)
+│   │   └── equities/             # Nexingale-E (planned)
 │   └── backtest/                 # (planned — the validation gate)
 ├── tests/                        # 23 tests
 ├── docs/
 │   ├── STATUS_AND_DEPLOYMENT.md  # workflow + deployment phases
 │   └── MATH_LEDGER.md            # robustness-vs-optimality trade-offs
-└── quantflow_d_standalone.py     # whole D-pipeline in one runnable file
+└── Nexingale_D_standalone.py     # whole D-pipeline in one runnable file
 ```
 
 ## Tests
