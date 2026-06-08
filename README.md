@@ -141,9 +141,8 @@ FLAGS:
 
 ## Input format
 
-Each engine reads a list of plain dicts (built today by hand; a data adapter is
-the next milestone). Fields per engine are documented in
-[`docs/STATUS_AND_DEPLOYMENT.md`](docs/STATUS_AND_DEPLOYMENT.md) section 3.
+Each engine reads a list of plain dicts (to be manually entered; a data adapter is
+the next feature). 
 
 ---
 
