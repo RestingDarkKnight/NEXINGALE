@@ -1,6 +1,6 @@
 <div align="center">
 
-# quantflow
+# NEXINGALE
 
 **A physics-inspired, multi-stage quantitative trading pipeline for Indian derivatives markets.**
 
