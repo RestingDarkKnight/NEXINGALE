@@ -34,7 +34,7 @@ This repository currently executes **Nexingale-D**.
 ## Architecture
 
 <p align="center">
-  <img src="Nexingale.png" alt="NEXINGALE Architecture" width="1000">
+  <img src="NEXINGALE/Nexingale.png" alt="NEXINGALE Architecture" width="1000">
 </p>
 
 <p align="center">
