@@ -12,47 +12,34 @@ Random matrix theory · topological regime detection · Ising/QUBO portfolio sel
 
 ---
 
-## What this is
+## Introduction
 
-`quantflow` turns a snapshot of the market into a **risk-checked trade plan**, by
-passing it through a five-stage pipeline where each stage does one well-defined
-job and hands its output to the next. The design goal is a system that is both
+`NEXINGALE` attempts to turn raw market data into a **risk-assessed trade plan**, by
+passing it through a five-stage pipeline. The design goal is a system that is both
 **rigorous** (every stage grounded in real math, with documented trade-offs) and
 **accountable** (every decision is traceable back to the data that produced it).
 
 It is split into two branches that share one spine:
 
-- **quantflow-D (derivatives)** — dynamic options/futures trading. **Built.**
-- **quantflow-E (equities)** — long-horizon cross-sectional factor trading. *Planned.*
+- **Nexingale-D (derivatives)** — dynamic options/futures trading.
+- **Nexingale-E (equities)** — long-horizon cross-sectional factor equity trading from exchange filings and other raw data. *To be built.*
 
-This repo currently implements **quantflow-D** end to end.
+This repository currently executes **Nexingale-D**.
 
 > [!WARNING]
-> **This system has not been shown to be profitable.** Every stage is built and
-> tested, but the pipeline has never been backtested on real history and has
-> never placed a trade. It runs on synthetic and hand-built data only. Treat it
-> as a research scaffold, not a money-making tool. See [Status](#status) and the
-> [disclaimer](#disclaimer).
+>It is a Just for fun research scaffold, not a money-making tool.
 
 ---
 
-## Pipeline at a glance
+## Architecture
 
-```
-  market snapshot  (instruments, option data, flows, returns)
-        |
-        v
-  +----------------------------------------------------------------+
-  | STAGE 1  Candidate generation   4 signal engines propose trades |
-  | STAGE 2  RMT cleaning           denoise the correlation matrix   |
-  | STAGE 3  TDA regime detection   label the market regime          |
-  | STAGE 4  VOLTA (QUBO)           pick the optimal trade subset     |
-  | STAGE 5  Risk agent             veto / size down to limits        |
-  +----------------------------------------------------------------+
-        |
-        v
-  final dry-run plan  +  full reasoning trace
-```
+<p align="center">
+  <img src="Nexingale.png" alt="NEXINGALE Architecture" width="1000">
+</p>
+
+<p align="center">
+  Workflow from market data input to explainable trades output.
+</p>
 
 | Stage | Job | Input | Output |
 |------:|-----|-------|--------|
@@ -64,7 +51,7 @@ This repo currently implements **quantflow-D** end to end.
 
 ---
 
-## The math, briefly
+## The Brief Mathematics: 
 
 Each stage is a real technique, not a heuristic dressed up:
 
@@ -93,25 +80,6 @@ rigorous upgrade for each — is documented in
 
 ---
 
-## Status
-
-| Stage | Component | State |
-|---|---|---|
-| Spine 2 | RMT correlation cleaning | done, locked |
-| Spine 3 | TDA regime detection | done |
-| D-1 | Candidate generation (4 engines) | done |
-| D-4 | VOLTA QUBO optimizer | done |
-| D-5 | Risk agent | done |
-| — | Pipeline orchestrator | done |
-| — | Single standalone file | done |
-| Spine 1 | Pattern memory | planned (off critical path) |
-| — | Real data adapter | next |
-| — | Backtest harness | next (the validation gate) |
-| Branch E | Equities pipeline | planned |
-
-**23 tests pass.** The full pipeline runs end to end on synthetic data.
-
----
 
 ## Install
 
@@ -210,27 +178,16 @@ quantflow/
 python -m pytest tests/ -q
 ```
 
-## Roadmap
+## Followups
 
-1. **Data adapter** — turn Kite / SOVRENN / NSE exports into the `market` dict.
+1. **Data adapter** — turn Kite / SOVRENN app news / NSE exports into the `market` dict.
 2. **Backtest harness** — roll the pipeline over history, score realised P&L /
-   Sharpe / drawdown against a benchmark. **This is the gate; no live capital
-   before it passes.**
-3. **Paper trading** — daily live runs, no orders, for a meaningful period.
-4. **Calibrated edges & trained regime classifier** — replace the hand-formulas
-   (see the ledger).
-5. **quantflow-E** — the equities branch, once D is validated.
+   Sharpe / drawdown against a benchmark. 
+3. **Paper trading** — daily live runs, no orders, for a testing period.
+4. **Calibrated edges & trained regime classifier** — replace the hand-formulas after getting a organic trade database.
+5. **Nexingale-E** — for equities. 
 
 ---
-
-## Disclaimer
-
-This is a personal research project for studying physics-inspired methods in
-quantitative finance. **It is not financial advice, not a recommendation to
-trade, and has not been validated for profitability.** Nothing in this repository
-places live orders. Markets carry risk; you can lose money. Do your own research
-and consult a qualified professional before risking capital. The author accepts
-no liability for any use of this code.
 
 ## License
 
