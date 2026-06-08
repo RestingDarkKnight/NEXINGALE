@@ -6,7 +6,7 @@
 
 Random matrix theory · topological regime detection · Ising/QUBO portfolio selection · rule-based risk
 
-<sub>Research project · dry-run only · not financial advice</sub>
+<sub>Research project</sub>
 
 </div>
 
