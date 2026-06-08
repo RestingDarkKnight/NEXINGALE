@@ -1,10 +1,10 @@
 """
-quantflow-D : single-file derivatives pipeline (generated, runnable standalone)
+Nexingale-D : single-file derivatives pipeline (generated, runnable standalone)
 ================================================================================
-GENERATED from the quantflow package. Edit the package, then regenerate.
+GENERATED from the Nexingale package. Edit the package, then regenerate.
 Pipeline: signal engines -> RMT clean -> TDA regime -> VOLTA select -> risk review
 Dependencies: numpy, dimod, dwave-neal, ripser
-Run: python quantflow_d_standalone.py   (runs the demo at the bottom)
+Run: python Nexingale_d_standalone.py   (runs the demo at the bottom)
 The agent layer is deterministic by design; a real LLM overlay slots into
 risk.review's llm_review hook.
 """
