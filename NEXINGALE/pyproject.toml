@@ -1,5 +1,5 @@
 [project]
-name = "quantflow"
+name = "Nexingale"
 version = "0.1.0"
 description = "Two-branch quantitative research and trading pipeline (shared spine + equities/derivatives branches)"
 requires-python = ">=3.11"
